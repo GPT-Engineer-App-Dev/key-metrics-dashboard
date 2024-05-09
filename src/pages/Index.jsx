@@ -1,19 +1,39 @@
-// Update this page (the content is just a fallback if you fail and example)
-// Use chakra-ui
-import { Container, Text, VStack } from "@chakra-ui/react";
-
-// Example of using react-icons
-// import { FaRocket } from "react-icons/fa";
-// <IconButton aria-label="Add" icon={<FaRocket />} size="lg" />; // IconButton would also have to be imported from chakra
+import { Box, Flex, Text, VStack, Heading, Stat, StatLabel, StatNumber, StatHelpText, StatArrow, SimpleGrid } from "@chakra-ui/react";
 
 const Index = () => {
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-      <VStack spacing={4}>
-        <Text fontSize="2xl">Your Blank Canvas</Text>
-        <Text>Chat with the agent to start making edits.</Text>
-      </VStack>
-    </Container>
+    <Box p={5}>
+      <Flex direction="column" align="center" justify="center" mb={10}>
+        <Heading mb={4}>Business Dashboard</Heading>
+        <Text fontSize="lg">Overview of key business metrics</Text>
+      </Flex>
+      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={10}>
+        <Stat p={5} shadow="md" border="1px" borderColor="gray.200">
+          <StatLabel>Sales</StatLabel>
+          <StatNumber>$30,000</StatNumber>
+          <StatHelpText>
+            <StatArrow type="increase" />
+            23.36%
+          </StatHelpText>
+        </Stat>
+        <Stat p={5} shadow="md" border="1px" borderColor="gray.200">
+          <StatLabel>Revenue</StatLabel>
+          <StatNumber>$45,000</StatNumber>
+          <StatHelpText>
+            <StatArrow type="increase" />
+            15.89%
+          </StatHelpText>
+        </Stat>
+        <Stat p={5} shadow="md" border="1px" borderColor="gray.200">
+          <StatLabel>Expenses</StatLabel>
+          <StatNumber>$20,000</StatNumber>
+          <StatHelpText>
+            <StatArrow type="decrease" />
+            5.00%
+          </StatHelpText>
+        </Stat>
+      </SimpleGrid>
+    </Box>
   );
 };
 
