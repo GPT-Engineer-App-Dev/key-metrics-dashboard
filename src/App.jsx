@@ -1,5 +1,5 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import { Flex, Image, Link, Box } from "@chakra-ui/react";
+import { Flex, Text, Link } from "@chakra-ui/react";
 import Index from "./pages/Index.jsx";
 
 const Header = () => (
@@ -13,6 +13,17 @@ const Header = () => (
   </Flex>
 );
 
+const Footer = () => (
+  <Flex as="footer" align="center" justify="space-between" p={4} bg="brand.700" color="white">
+    <Text fontSize="sm">© 2023 Business Dashboard. All rights reserved.</Text>
+    <Flex>
+      <Link href="/privacy" p={2}>Privacy Policy</Link>
+      <Link href="/terms" p={2}>Terms of Service</Link>
+      <Link href="/contact" p={2}>Contact Us</Link>
+    </Flex>
+  </Flex>
+);
+
 function App() {
   return (
     <Router>
@@ -20,6 +31,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Index />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
