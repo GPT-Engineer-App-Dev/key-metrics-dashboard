@@ -1,5 +1,4 @@
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import { Flex, Text, Link } from "@chakra-ui/react";
+import { Route, BrowserRouter as Router, Routes, Flex, Image, Link, Box } from "@chakra-ui/react";
 import Index from "./pages/Index.jsx";
 
 const Header = () => (
