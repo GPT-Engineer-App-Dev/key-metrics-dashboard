@@ -1,6 +1,7 @@
 import { Box, Flex, Text, VStack, Heading, useMediaQuery } from "@chakra-ui/react";
 import React from "react";
 import { Progress } from "@chakra-ui/react";
+import { motion } from 'framer-motion';
 
 const Index = () => {
   const [data, setData] = React.useState([
@@ -25,9 +26,9 @@ const Index = () => {
         {data.map((item, index) => (
           <Box key={index}>
             <Text>{item.name}</Text>
-            <Text>Sales: <Progress colorScheme="purple" size="sm" value={item.Sales} /></Text>
-            <Text>Revenue: <Progress colorScheme="green" size="sm" value={item.Revenue} /></Text>
-            <Text>Expenses: <Progress colorScheme="orange" size="sm" value={item.Expenses} /></Text>
+            <Text>Sales: <motion.div initial={{ width: 0 }} animate={{ width: `${item.Sales}%` }} transition={{ duration: 0.5 }}><Progress colorScheme="purple" size="sm" value={item.Sales} /></motion.div></Text>
+            <Text>Revenue: <motion.div initial={{ width: 0 }} animate={{ width: `${item.Revenue}%` }} transition={{ duration: 0.5 }}><Progress colorScheme="green" size="sm" value={item.Revenue} /></motion.div></Text>
+            <Text>Expenses: <motion.div initial={{ width: 0 }} animate={{ width: `${item.Expenses}%` }} transition={{ duration: 0.5 }}><Progress colorScheme="orange" size="sm" value={item.Expenses} /></motion.div></Text>
           </Box>
         ))}
       </VStack>
